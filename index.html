@@ -359,4 +359,71 @@
         }
         
         function selectPackage() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]:ch
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkboxes.length !== 3) {
+                alert('Por favor, selecione exatamente 3 serviços para o pacote.');
+                return;
+            }
+            
+            isPackage = true;
+            packageServices = Array.from(checkboxes).map(cb => cb.value);
+            currentService = packageServices.join(", ");
+            
+            document.getElementById('selectedService').textContent = currentService;
+            document.getElementById('modalText').innerHTML = `
+                Você está solicitando o pacote de 3 atividades por R$10:<br>
+                <span class="font-semibold">${packageServices.join(", ")}</span>
+            `;
+            document.getElementById('serviceModal').classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+            document.getElementById('studentName').value = "";
+            document.getElementById('studentRA').value = "";
+            document.getElementById('studentPassword').value = "";
+            document.getElementById('taskDetails').value = "";
+        }
+        
+        function confirmOrder() {
+            const name = document.getElementById('studentName').value.trim();
+            const ra = document.getElementById('studentRA').value.trim();
+            const password = document.getElementById('studentPassword').value.trim();
+            const details = document.getElementById('taskDetails').value.trim();
+            
+            if (!name) {
+                alert("Por favor, insira seu nome.");
+                return;
+            }
+            
+            if (!ra) {
+                alert("Por favor, insira seu R.A. (Registro Acadêmico).");
+                return;
+            }
+            
+            if (!password) {
+                alert("Por favor, insira sua senha de acesso.");
+                return;
+            }
+            
+            let message = `Olá, gostaria de solicitar ${isPackage ? 'o pacote de 3 atividades' : 'uma atividade'} na Sala do Futuro!\n\n`;
+            message += `*Nome:* ${name}\n`;
+            message += `*R.A.:* ${ra}\n`;
+            message += `*Senha:* ${password}\n`;
+            message += `*Serviço${isPackage ? 's' : ''}:* ${currentService}\n`;
+            message += `*Valor:* ${isPackage ? 'R$10 (pacote com 3 atividades)' : 'R$5'}\n\n`;
+            
+            if (details) {
+                message += `*Detalhes da atividade:*\n${details}\n\n`;
+            }
+            
+            message += `Por favor, confirme a disponibilidade. Obrigado!`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+            
+            closeModal();
+        }
+    </script>
+</body>
+</html>
