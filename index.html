@@ -354,12 +354,22 @@
         let packageServices = [];
         
         function selectService(service) {
-            currentService = service;
-            isPackage = false;
-            document.getElementById('selectedService').textContent = service;
-            document.getElementById('modalText').innerHTML = `Você está solicitando: <span class="font-semibold">${service}</span> por R$5`;
-            document.getElementById('serviceModal').classList.remove('hidden');
-        }
+    const modal = document.getElementById('serviceModal');
+
+    // Garante reset do modal
+    modal.classList.add('hidden');
+    modal.style.display = 'none'; // força sumir
+    setTimeout(() => {
+        modal.style.display = 'flex'; // força reaparecer
+        modal.classList.remove('hidden');
+    }, 10); // pequena pausa para garantir o reset
+
+    currentService = service;
+    isPackage = false;
+
+    document.getElementById('selectedService').textContent = service;
+    document.getElementById('modalText').innerHTML = `Você está solicitando: <span class="font-semibold">${service}</span> por R$5`;
+}
         
         function selectPackage() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -380,25 +390,16 @@
             document.getElementById('serviceModal').classList.remove('hidden');
         }
         
-        function closeModal() {
+   function closeModal() {
     const modal = document.getElementById('serviceModal');
     modal.classList.add('hidden');
+    modal.style.display = 'none';
 
-    // Limpa campos
     document.getElementById('studentName').value = "";
     document.getElementById('studentRA').value = "";
     document.getElementById('studentPassword').value = "";
     document.getElementById('taskDetails').value = "";
-
-    // Zera variáveis globais
-    currentService = "";
-    isPackage = false;
-    packageServices = [];
-
-    // Garante que o texto do modal será limpo
-    document.getElementById('selectedService').textContent = "";
-    document.getElementById('modalText').textContent = "";
-}        
+}
         function confirmOrder() {
             const name = document.getElementById('studentName').value.trim();
             const ra = document.getElementById('studentRA').value.trim();
