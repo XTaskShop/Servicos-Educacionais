@@ -395,7 +395,7 @@
             document.getElementById('serviceModal').classList.remove('hidden');
         }
         
-   function closeModal() {
+ function closeModal() {
     const modal = document.getElementById('serviceModal');
     modal.classList.add('hidden');
     modal.style.display = 'none';
@@ -404,6 +404,14 @@
     document.getElementById('studentRA').value = "";
     document.getElementById('studentPassword').value = "";
     document.getElementById('taskDetails').value = "";
+
+    // Resetar estado se for pacote
+    if (isPackage) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => cb.checked = false);
+        packageServices = [];
+        isPackage = false;
+    }
 }
         function confirmOrder() {
             const name = document.getElementById('studentName').value.trim();
