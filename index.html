@@ -381,25 +381,24 @@
         }
         
         function closeModal() {
-    // esconde o modal
-    document.getElementById('serviceModal').classList.add('hidden');
+    const modal = document.getElementById('serviceModal');
+    modal.classList.add('hidden');
 
-    // limpa os campos do formulário
-    document.getElementById('studentName').value     = "";
-    document.getElementById('studentRA').value       = "";
+    // Limpa campos
+    document.getElementById('studentName').value = "";
+    document.getElementById('studentRA').value = "";
     document.getElementById('studentPassword').value = "";
-    document.getElementById('taskDetails').value     = "";
+    document.getElementById('taskDetails').value = "";
 
-    // zera o estado interno
-    isPackage       = false;
+    // Zera variáveis globais
+    currentService = "";
+    isPackage = false;
     packageServices = [];
 
-    // desmarca todos os checkboxes do pacote
-    document
-        .querySelectorAll('input[type="checkbox"]')
-        .forEach(cb => cb.checked = false);
-}
-        
+    // Garante que o texto do modal será limpo
+    document.getElementById('selectedService').textContent = "";
+    document.getElementById('modalText').textContent = "";
+}        
         function confirmOrder() {
             const name = document.getElementById('studentName').value.trim();
             const ra = document.getElementById('studentRA').value.trim();
