@@ -381,12 +381,24 @@
         }
         
         function closeModal() {
-            document.getElementById('serviceModal').classList.add('hidden');
-            document.getElementById('studentName').value = "";
-            document.getElementById('studentRA').value = "";
-            document.getElementById('studentPassword').value = "";
-            document.getElementById('taskDetails').value = "";
-        }
+    // esconde o modal
+    document.getElementById('serviceModal').classList.add('hidden');
+
+    // limpa os campos do formulário
+    document.getElementById('studentName').value     = "";
+    document.getElementById('studentRA').value       = "";
+    document.getElementById('studentPassword').value = "";
+    document.getElementById('taskDetails').value     = "";
+
+    // zera o estado interno
+    isPackage       = false;
+    packageServices = [];
+
+    // desmarca todos os checkboxes do pacote
+    document
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(cb => cb.checked = false);
+}
         
         function confirmOrder() {
             const name = document.getElementById('studentName').value.trim();
