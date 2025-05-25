@@ -1,130 +1,209 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Termos de Uso | XTask</title>
-  <style>
-    body {
-      background-color: #000000; /* fundo preto */
-      color: #FFFFFF; /* texto branco */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #1A1A1A; /* cinza escuro */
-      padding: 30px 40px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #3B0087AA; /* sombra roxa leve */
-    }
-
-    h1 {
-      color: #A259FF; /* roxo neon */
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    h2 {
-      color: #00FFB2; /* verde neon */
-      font-size: 1.5rem;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-left: 4px solid #00FFB2;
-      padding-left: 10px;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    a {
-      text-decoration: underline;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    a.email-link {
-      color: #1DA1F2; /* azul vibrante */
-    }
-
-    a.whatsapp-link {
-      color: #25D366; /* verde WhatsApp */
-    }
-
-    /* Ícones tamanho e estilo */
-    svg.contact-icon {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    /* Responsivo simples */
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - XTask</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        electric: '#4D5BFF',
+                        neon: '#8A2BE2',
+                        fluorescent: '#00FF7F',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #4D5BFF 50%, #8A2BE2 100%);
+        }
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        .hover-grow:hover {
+            transform: scale(1.02);
+        }
+        .section-divider {
+            border-bottom: 1px solid #F5F5F5;
+        }
+        .highlight-box {
+            border-left: 4px solid #4D5BFF;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-black font-sans">
+    <!-- Header with Gradient -->
+    <header class="gradient-bg text-white py-8 px-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-tasks text-3xl mr-3 text-fluorescent"></i>
+                <h1 class="text-3xl font-bold">XTask</h1>
+            </div>
+            <nav>
+                <a href="#" class="hover:text-fluorescent transition-colors duration-300">
+                    <i class="fas fa-home mr-1"></i> Início
+                </a>
+            </nav>
+        </div>
+    </header>
 
-  <div class="container">
-    <h1>Termos de Uso</h1>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Title -->
+        <div class="flex items-center mb-8">
+            <div class="bg-electric w-2 h-12 rounded-full mr-4"></div>
+            <h2 class="text-3xl font-bold">Termos de Uso</h2>
+        </div>
 
-    <p>Bem-vindo à XTask! Ao utilizar nossos serviços, você concorda com os seguintes termos:</p>
+        <!-- Welcome Section -->
+        <section class="mb-12 bg-gray-50 p-6 rounded-lg shadow-sm hover-grow">
+            <p class="text-lg mb-4">
+                <span class="font-bold text-electric">Bem-vindo à XTask!</span> Ao utilizar nossos serviços, você concorda com os seguintes termos:
+            </p>
+        </section>
 
-    <h2>1. Objetivo</h2>
-    <p>A XTask presta serviços de auxílio educacional com o objetivo de facilitar a realização de atividades acadêmicas, sem infringir normas escolares ou universitárias.</p>
+        <!-- Terms Sections -->
+        <div class="space-y-8">
+            <!-- Section 1 -->
+            <section class="section-divider pb-8">
+                <div class="flex items-start mb-4">
+                    <span class="bg-electric text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4">1</span>
+                    <h3 class="text-2xl font-semibold">Objetivo</h3>
+                </div>
+                <div class="pl-12">
+                    <p class="text-gray-800 leading-relaxed">
+                        A XTask presta serviços de auxílio educacional com o objetivo de facilitar a realização de atividades acadêmicas, sem infringir normas escolares ou universitárias.
+                    </p>
+                </div>
+            </section>
 
-    <h2>2. Responsabilidade</h2>
-    <p>O usuário é responsável pelas informações fornecidas e pelo uso adequado do material entregue. A XTask não se responsabiliza por eventuais sanções escolares decorrentes do uso indevido dos serviços.</p>
+            <!-- Section 2 -->
+            <section class="section-divider pb-8">
+                <div class="flex items-start mb-4">
+                    <span class="bg-electric text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4">2</span>
+                    <h3 class="text-2xl font-semibold">Responsabilidade</h3>
+                </div>
+                <div class="pl-12">
+                    <p class="text-gray-800 leading-relaxed">
+                        O usuário é responsável pelas informações fornecidas e pelo uso adequado do material entregue. A XTask não se responsabiliza por eventuais sanções escolares decorrentes do uso indevido dos serviços.
+                    </p>
+                </div>
+            </section>
 
-    <h2>3. Privacidade</h2>
-    <p>As informações fornecidas, como R.A., senha e dados pessoais, são utilizadas exclusivamente para a execução dos serviços e não são armazenadas ou compartilhadas com terceiros.</p>
+            <!-- Section 3 -->
+            <section class="section-divider pb-8">
+                <div class="flex items-start mb-4">
+                    <span class="bg-electric text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4">3</span>
+                    <h3 class="text-2xl font-semibold">Privacidade</h3>
+                </div>
+                <div class="pl-12">
+                    <p class="text-gray-800 leading-relaxed">
+                        As informações fornecidas, como R.A., senha e dados pessoais, são utilizadas exclusivamente para a execução dos serviços e não são armazenadas ou compartilhadas com terceiros.
+                    </p>
+                </div>
+            </section>
 
-    <h2>4. Pagamento e Entrega</h2>
-    <p>Os serviços são realizados mediante pagamento antecipado via Pix ou outro meio combinado. A entrega ocorre conforme o prazo acordado, geralmente em até 48 horas.</p>
+            <!-- Section 4 -->
+            <section class="section-divider pb-8">
+                <div class="flex items-start mb-4">
+                    <span class="bg-electric text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4">4</span>
+                    <h3 class="text-2xl font-semibold">Pagamento e Entrega</h3>
+                </div>
+                <div class="pl-12">
+                    <p class="text-gray-800 leading-relaxed">
+                        Os serviços são realizados mediante pagamento antecipado via Pix ou outro meio combinado. A entrega ocorre conforme o prazo acordado, geralmente em até 48 horas.
+                    </p>
+                </div>
+            </section>
 
-    <h2>5. Reembolso</h2>
-    <p>O reembolso só será possível caso o serviço ainda não tenha sido iniciado. Após a execução, não há devolução de valores.</p>
+            <!-- Section 5 -->
+            <section class="section-divider pb-8">
+                <div class="flex items-start mb-4">
+                    <span class="bg-electric text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4">5</span>
+                    <h3 class="text-2xl font-semibold">Reembolso</h3>
+                </div>
+                <div class="pl-12">
+                    <p class="text-gray-800 leading-relaxed">
+                        O reembolso só será possível caso o serviço ainda não tenha sido iniciado. Após a execução, não há devolução de valores.
+                    </p>
+                </div>
+            </section>
 
-    <h2>6. Contato</h2>
-    <p>Para dúvidas ou suporte, entre em contato pelo e-mail: 
-      <a href="mailto:xtaskservicoseducacionais@gmail.com" class="email-link" aria-label="Email">
-        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
-        </svg>
-        xtaskservicoseducacionais@gmail.com
-      </a>.
-    </p>
+            <!-- Section 6 -->
+            <section class="pb-8">
+                <div class="flex items-start mb-4">
+                    <span class="bg-electric text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4">6</span>
+                    <h3 class="text-2xl font-semibold">Contato</h3>
+                </div>
+                <div class="pl-12">
+                    <p class="text-gray-800 leading-relaxed mb-4">
+                        Para dúvidas ou suporte, entre em contato pelo e-mail:
+                    </p>
+                    <div class="highlight-box bg-gray-50 p-4 mb-4 rounded-r">
+                        <a href="mailto:xtaskservicoseducacionais@gmail.com" class="text-electric hover:text-neon font-medium">
+                            <i class="fas fa-envelope mr-2"></i> xtaskservicoseducacionais@gmail.com
+                        </a>
+                </div>
+            </section>
+        </div>
 
-    <p>Ou pelo WhatsApp: 
-      <a href="https://api.whatsapp.com/send?phone=5511974984104" target="_blank" rel="noopener" class="whatsapp-link" aria-label="WhatsApp">
-        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M16.6 13.9c-.3-.1-1.8-.9-2-.9-.3 0-.5 0-.7.5-.3.6-1.1.9-1.5.9s-1.1-.4-1.7-1.2c-.6-.7-1-1.5-1-2.2s.7-1.1 1-1.3c.3-.2.4-.4.4-.6 0-.2-.7-1.7-1-2.3-.3-.6-.7-.5-1-.5s-.6 0-.9 0c-.3 0-.8.3-1.2.8-.4.5-1.4 1.4-1.4 3.3s1.4 3.8 1.6 4.1c.2.3 2.7 4.3 6.5 5.8 3.6 1.4 3.6-.8 4-1.1.4-.3 1.1-1.4 1.1-2.7 0-1.3-.7-2.1-1-2.3zM12 2C6.5 2 2 6.5 2 12c0 2.2.8 4.3 2.3 5.9L2 22l4.1-2.2c1.6 1 3.5 1.3 5.4 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
-        </svg>
-        +55 11 97498-4104
-      </a>
-    </p>
+        <!-- Last Update -->
+        <div class="mt-12 text-center text-gray-500">
+            <p>Última atualização: Maio de 20525</p>
+        </div>
+    </main>
 
-    <p style="color:#888888; font-size:0.9rem; margin-top: 30px;">Última atualização: Maio de 20525</p>
-  </div>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-tasks text-2xl mr-3 text-fluorescent"></i>
+                        <span class="text-xl font-bold">XTask</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://wa.me/5511974984104" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center transition-colors duration-300">
+                        <i class="fab fa-whatsapp text-xl mr-2"></i> Fale conosco
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 20525 XTask. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-neon text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-electric transition-colors duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
