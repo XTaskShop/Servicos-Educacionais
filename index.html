@@ -13,39 +13,48 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          electric: '#4D5BFF',
-          neon: '#8A2BE2',
-          fluorescent: '#00FF7F',
-        }
-      }
-    }
-  }
-</script>
-
 <style>
-  .gradient-bg {
-    background: linear-gradient(135deg, #000000 0%, #4D5BFF 50%, #8A2BE2 100%);
-  }
-</style>
 
-<!-- Cabeçalho -->
-<header class="fixed top-0 left-0 w-full z-50 gradient-bg text-white py-4 px-4 shadow-lg">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="flex items-center">
-      <i class="fas fa-tasks text-3xl mr-3 text-fluorescent"></i>
-      <h1 class="text-3xl font-bold">XTask</h1>
-    </div>
-  </div>
-</header>
-
-<main class="pt-36">
-  <!-- TODO o conteúdo do seu site vai aqui -->
-    
+        html {
+  scroll-behavior: smooth;
+}
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .promo-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-1">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-graduation-cap text-3xl mr-3"></i>
+                    <h1 class="text-2xl md:text-3xl font-bold">XTask</h1>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-yellow-400 text-indigo-900 px-3 py-1 rounded-full font-semibold text-sm">
+                        <i class="fas fa-star mr-1"></i> Serviços Educacionais
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-12">
     <div class="container mx-auto px-4 text-center">
@@ -646,6 +655,5 @@ function cancopup() {
   minimizePopup();
 }
 </script>
-</main>
 </body>
 </html>
