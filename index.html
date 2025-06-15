@@ -473,7 +473,10 @@
 
 
 
-<!-- POPUP PROMOÇÃO - TEMA ROXO COM CRONÔMETRO -->
+    
+
+
+    <!-- POPUP PROMOÇÃO - TEMA ROXO COM CRONÔMETRO -->
 <style>
 /* POPUP GRANDE */
 #promo-popup {
@@ -650,10 +653,19 @@ function verPromocao() {
   }, 600);
 }
 
-// Quando clicar em "Cancelarcelar"
-function cancopup() {
-  minimizePopup();
+// CORREÇÃO DA FUNÇÃO CANCELAR (agora funcionando)
+function cancelarPopup() {
+  const popup = document.getElementById('promo-popup');
+  popup.style.opacity = '0';
+  setTimeout(() => {
+    popup.style.display = 'none';
+    document.getElementById('mini-popup').style.display = 'block';
+  }, 500);
 }
-</script>
+                                                                 </script>
+
+    
+
+
 </body>
 </html>
